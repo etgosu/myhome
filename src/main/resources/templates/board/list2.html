@@ -1,10 +1,10 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/common :: head('게시판')">
+<head th:replace="fragments/common :: head('자료실')">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title th:text="${title}">게시판</title>
+    <title th:text="${title}">자료실</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- Custom styles for this template -->
@@ -12,11 +12,11 @@
 </head>
 
 <body>
-    <div th:replace="fragments/common :: menu('board')"></div>
+    <div th:replace="fragments/common :: menu('inforoom')"></div>
 
     <div class="container">
-        <h2>게시판</h2>
-        <div>총 건수 :  <span th:text ="${#lists.size(boards)}"></span></div>
+        <h2>자료실</h2>
+        <div>총 건수 :  <span th:text ="${#lists.size(inforooms)}"></span></div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -26,9 +26,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr th:each="board : ${boards}">
-                  <th th:text="${board.id}" >1</th>
-                  <th th:text="${board.title}" >1</th>
+                <tr th:each="inforoom : ${inforooms}">
+                  <th th:text="${inforoom.id}" >1</th>
+                  <th th:text="${inforoom.title}" >1</th>
                   <th>홍길동</th>
                 </tr>
               </tbody>
